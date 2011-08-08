@@ -22,7 +22,6 @@ module Blacklight
 %q{
  *
  * Required by Blacklight
- *= require 'yui'
  *= require 'jquery/ui-lightness/jquery-ui-1.8.1.custom.css'
  *= require 'blacklight/blacklight'         
 }
@@ -37,10 +36,7 @@ module Blacklight
         end
         directory("../../../../app/assets/images/blacklight", "public/images/blacklight")
       else
-        # directories are relative to the source_root 
-        directory("../../../../app/assets/images/blacklight", "public/images/blacklight")
-        directory("../../../../app/assets/stylesheets", "public/stylesheets") 
-        directory("../../../../app/assets/javascripts", "public/javascripts") 
+        raise "Starting with blacklight 3.1, you must be using rails 3.1 with assets turned on to use the generators."
       end
     end
 
