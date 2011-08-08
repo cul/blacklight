@@ -12,8 +12,8 @@ describe HtmlHeadHelper do
     end
     it "should include script tags specified in controller#javascript_includes" do
       html = helper.render_js_includes
-      html.should have_selector("script[src='/javascripts/some_js.js'][type='text/javascript']")
-      html.should have_selector("script[src='/javascripts/other_js.js'][type='text/javascript']")      
+      html.should have_selector("script[src='/assets/some_js.js'][type='text/javascript']")
+      html.should have_selector("script[src='/assets/other_js.js'][type='text/javascript']")      
 
       html.html_safe?.should == true
     end
@@ -30,8 +30,8 @@ describe HtmlHeadHelper do
     end
     it "should render stylesheets specified in controller #stylesheet_links" do
       html = helper.render_stylesheet_includes      
-      html.should have_selector("link[href='/stylesheets/my_stylesheet.css'][rel='stylesheet'][type='text/css']")
-      html.should have_selector("link[href='/stylesheets/other_stylesheet.css'][rel='stylesheet'][type='text/css']")
+      html.should have_selector("link[href='/assets/my_stylesheet.css'][rel='stylesheet'][type='text/css']")
+      html.should have_selector("link[href='/assets/other_stylesheet.css'][rel='stylesheet'][type='text/css']")
       html.html_safe?.should == true
     end
   end
@@ -85,10 +85,12 @@ describe HtmlHeadHelper do
         @output.should have_selector("link[rel=rel][type=type][href=href]")
       end
       it "should include render_javascript_includes" do
-        @output.index( render_js_includes ).should_not be_nil
+        @output.should have_selector("script[src='/assets/my_js.js'][type='text/javascript']")
+        #@output.index( render_js_includes ).should_not be_nil
       end
       it "should include render_stylesheet_links" do
-        @output.index( render_stylesheet_includes ).should_not be_nil
+        @output.should have_selector("link[href='/assets/my_css.css'][type='text/css']")
+        #@output.index( render_stylesheet_includes ).should_not be_nil
       end
       it "should include content_for :head" do
         @output.should have_selector("meta[keywords]")

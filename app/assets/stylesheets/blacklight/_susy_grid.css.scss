@@ -1,0 +1,38 @@
+@import "susy_framework";
+
+#page
+{ 
+  @include container;
+  @include susy-grid-background;
+}
+
+#hd {
+  @include full;
+
+  #logo {
+    @include columns(12,24);
+  }
+  #user_util_links { 
+    @include columns(12,24);
+    @include omega(24);
+  }
+}
+
+#bd {
+  @include full;
+
+  #main {
+    @include prefix(1,24);
+    @include columns(18,24);
+    @include omega(24);
+  }
+
+  #sidebar {
+    @include columns(5,24);
+  }
+}
+
+#ft {
+  @include full;
+}
+

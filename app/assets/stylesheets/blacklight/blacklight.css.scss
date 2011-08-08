@@ -4,6 +4,20 @@
    which over-rides things in this file. Or of course you can choose
    not to use the Blacklight CSS file at all in your local app. */
 
+@import "compass";
+@import "compass/reset";
+
+/* Import this to maintain the old YUI font styles */
+@import "partials/yui_old_fonts";
+
+
+/* New susy-powered grid: see here: http://susy.oddbird.net/ */
+@import "partials/susy_grid";
+
+/* Color definitions */
+@import "partials/theme_gray_blue";
+
+
 /* Global */
 html {background: #707070;}
 
@@ -35,18 +49,21 @@ a:link, a:visited, a:active {border-bottom: 1px dotted #aaa; color: #2e4f81; tex
 a:hover {color: #029;}
 
 /* Header Container Layout */
-#hd {margin: 0em 2em 0 2em; padding: 2em 0 2em 0; }
+#hd {padding: 2em 0 2em 0; }
 #hd .yui-g {text-align: right;}
 #hd .yui-g .first {text-align: left;}
 #doc, #doc2, #doc3, #doc4 {background: #fff url('../../images/blacklight/border.png') repeat-x top left; border-bottom: 2px solid #555; margin: 0px auto;}
 /* border-top: 10px solid #548cd8; -moz-border-top-colors: #548cd8 #5188d3 #4e84d0 #4b81cd #497dc9 #457ac6 #4376c2 #4173be #3e71bc #3d6fba; */
 
 /* Body Container Layout */
-#bd {padding: 0 2em 2em 2em;}
-.yui-t1 #yui-main .yui-b, .yui-t2 #yui-main .yui-b, .yui-t3 #yui-main .yui-b {border-left: 1px dotted #ccc; padding: 1em 0 2em 2em; position: relative;}
+.yui-t1 #yui-main .yui-b, .yui-t2 #yui-main .yui-b, .yui-t3 #yui-main
+.yui-b {border-left: 1px dotted #ccc; padding: 1em 2em 2em 2em}
+
+#main, #sidebar {margin-bottom: 2em;}
 
 /* Left Sidebar Layout */
 .sidebar p {padding-top: 2em;}
+
 
 /* Top Banner */
 h1.site_title {background: transparent url('../../images/blacklight/logo.png') no-repeat top left; margin: 2em 0px 0px 1em; height: 35px; width: 120px;}
