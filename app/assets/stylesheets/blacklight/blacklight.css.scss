@@ -8,14 +8,14 @@
 @import "compass/reset";
 
 /* Import this to maintain the old YUI font styles */
-@import "partials/yui_old_fonts";
+@import "yui_old_fonts";
 
 
 /* New susy-powered grid: see here: http://susy.oddbird.net/ */
-@import "partials/susy_grid";
+@import "susy_grid";
 
 /* Color definitions */
-@import "partials/theme_gray_blue";
+@import "theme_gray_blue";
 
 
 /* Global */
