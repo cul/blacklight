@@ -24,7 +24,7 @@ html {background: #707070;}
    an accident. */
 .ui-dialog-content { text-align: left; }
 
-body {background: url('../../assets/blacklight/bg.png') repeat-x top left; font: 0.7em Verdana, "Lucida Grande", "Lucida Sans Unicode", "Arial Unicode MS", Arial, sans-serif; line-height: 1.4; color:#333; margin: 0px; padding: 15px;}
+body {background: asset_url('blacklight/bg.png',image) repeat-x top left; font: 0.7em Verdana, "Lucida Grande", "Lucida Sans Unicode", "Arial Unicode MS", Arial, sans-serif; line-height: 1.4; color:#333; margin: 0px; padding: 15px;}
 
 select,input,button,textarea {font: 1em Verdana, "Lucida Grande", "Lucida Sans Unicode", "Arial Unicode MS", Arial, sans-serif;}
 
@@ -50,7 +50,8 @@ a:hover {color: #029;}
 #hd {padding: 2em 0 2em 0; }
 #hd .yui-g {text-align: right;}
 #hd .yui-g .first {text-align: left;}
-#doc, #doc2, #doc3, #doc4 {background: #fff url('../../assets/blacklight/border.png') repeat-x top left; border-bottom: 2px solid #555; margin: 0px auto;}
+#doc, #doc2, #doc3, #doc4 {background: #fff
+  asset_url('blacklight/border.png',image) repeat-x top left; border-bottom: 2px solid #555; margin: 0px auto;}
 /* border-top: 10px solid #548cd8; -moz-border-top-colors: #548cd8 #5188d3 #4e84d0 #4b81cd #497dc9 #457ac6 #4376c2 #4173be #3e71bc #3d6fba; */
 
 /* Body Container Layout */
@@ -64,7 +65,8 @@ a:hover {color: #029;}
 
 
 /* Top Banner */
-h1.site_title {background: transparent url('../../assets/blacklight/logo.png') no-repeat top left; margin: 2em 0px 0px 1em; height: 35px; width: 120px;}
+h1.site_title {background: transparent
+  asset_url('blacklight/logo.png',image) no-repeat top left; margin: 2em 0px 0px 1em; height: 35px; width: 120px;}
 .first h1 {margin: 0px; padding: 0px;}
 h1.site_title a {display:block; height: 35px; width:120px; text-indent: -9999px; overflow: hidden; text-decoration: none; border: 0px;}
 h1.site_title a:link, h1.site_title a:visited, h1.site_title a:hover, h1.site_title a:active {border: 0px;}
@@ -233,7 +235,10 @@ font-weight:bold;
   text-align: center;
 }
 
-#startOverLink{display:block; position:absolute; top:50%; right:0.66em; margin-top:-12px; padding:0 7px 3px 12px; line-height:22px; text-decoration:none; color:#fff; background:url(../../assets/blacklight/start_over.gif) no-repeat center center; border-bottom: none;}
+#startOverLink{display:block; position:absolute; top:50%; right:0.66em;
+  margin-top:-12px; padding:0 7px 3px 12px; line-height:22px;
+  text-decoration:none; color:#fff;
+  background:asset_url('blacklight/start_over.gif', image) no-repeat center center; border-bottom: none;}
 
 
 #sortAndPerPage {
@@ -475,7 +480,7 @@ Search Parameters
   top:0; 
   width:32px;
   height:100%; 
-  background:url(../../assets/blacklight/remove.gif) no-repeat center center; 
+  background:asset_url('blacklight/remove.gif', image) no-repeat center center; 
   border-left:1px solid #d0daea;
   border-bottom: none;
   text-indent:-99999px; /* text there for screen readers, hidden visually */
@@ -490,7 +495,7 @@ Search Parameters
 .appliedFilter .queryName, .appliedFilter .filterName {
   /* ">" image */ 
   padding-right:14px; 
-  background:url(../../assets/blacklight/separator.gif) no-repeat right center;
+  background:asset_url('blacklight/separator.gif',image) no-repeat right center;
 }
 
 .filterValue {
