@@ -152,18 +152,12 @@ EOF
 
   def add_sass_configuration
     if use_asset_pipeline?
-      insert_into_file "Gemfile", :after => "gem 'uglifier'" do <<EOF
-
-  gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
-EOF
-      end
-      run "bundle install"
 
       insert_into_file "config/application.rb", :after => "config.assets.enabled = true" do <<EOF
     
     # Default SASS Configuration, check out https://github.com/rails/sass-rails for details
+    config.assets.compress = !Rails.env.development?
     config.sass.line_comments = Rails.env.development?
-    config.sass.compress = !Rails.env.development?
 
 EOF
       end     

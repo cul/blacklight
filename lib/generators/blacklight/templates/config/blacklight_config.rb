@@ -24,18 +24,19 @@ Blacklight.configure(:shared) do |config|
     :per_page => 10 
   }
  
-  # solr field values given special treatment in the show (single result) view
+  # solr field configuration for search results/index views
+  config[:index] = {
+    :show_link => "title_display",
+    :record_display_type => "format"
+  }
+  
+  # solr field configuration for document/show views
   config[:show] = {
     :html_title => "title_display",
     :heading => "title_display",
     :display_type => "format"
   }
 
-  # solr fld values given special treatment in the index (search results) view
-  config[:index] = {
-    :show_link => "title_display",
-    :record_display_type => "format"
-  }
 
   # solr fields that will be treated as facets by the blacklight application
   #   The ordering of the field names is the order of the display
@@ -235,12 +236,5 @@ Blacklight.configure(:shared) do |config|
   # mean") suggestion is offered.
   config[:spell_max] = 5
 
-  # Add documents to the list of object formats that are supported for all objects.
-  # This parameter is a hash, identical to the Blacklight::Solr::Document#export_formats 
-  # output; keys are format short-names that can be exported. Hash includes:
-  #    :content-type => mime-content-type
-  config[:unapi] = {
-    'oai_dc_xml' => { :content_type => 'text/xml' } 
-  }
 end
 

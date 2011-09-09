@@ -34,7 +34,7 @@ module Blacklight
 //= require blacklight/blacklight          
 }          
         end
-        directory("../../../../app/assets/images/blacklight", "public/images/blacklight")
+        directory("../../../../app/assets/images/blacklight", "app/assets/images/blacklight")
       else
         raise "Starting with blacklight 3.1, you must be using rails 3.1 with assets turned on to use the generators."
       end
