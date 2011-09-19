@@ -31,7 +31,7 @@ module Blacklight
 %q{
 // Required by Blacklight
 //= require jquery-ui
-//= require blacklight/blacklight          
+//= require blacklight/blacklight_standard
 }          
         end
         directory("../../../../app/assets/images/blacklight", "app/assets/images/blacklight")
