@@ -58,7 +58,7 @@ rvm use "$@" --create
 check_errs $? "rvm failed.  please run 'rvm install $@', and then re-run these tests." 
 
 if ! gem query -n rails -v ">=3.1.0" --installed > /dev/null; then
-  gem install --no-rdoc --no-ri 'railv'
+  gem install --no-rdoc --no-ri 'rails'
 fi
 
 if ! gem query -n bundler -v ">=1.0" --installed > /dev/null; then
