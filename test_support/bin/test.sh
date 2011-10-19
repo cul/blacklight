@@ -57,7 +57,7 @@ fi
 rvm use "$@" --create
 check_errs $? "rvm failed.  please run 'rvm install $@', and then re-run these tests." 
 
-if ! gem query -n rails -v ">=3.1.0" --installed > /dev/null; then
+if ! gem query -n rails -v ">=3.1.1" --installed > /dev/null; then
   gem install --no-rdoc --no-ri 'rails'
 fi
 
@@ -69,8 +69,8 @@ rails new test_app
 cd test_app
 echo "
 source 'http://rubygems.org'
-
-gem 'rails', '>= 3.1.0'
+gem 'rack', '1.3.3'
+gem 'rails', '~> 3.1.1'
 platforms :jruby do
   gem 'jruby-openssl'
   gem 'activerecord-jdbcsqlite3-adapter'
@@ -83,8 +83,8 @@ gem 'blacklight', :path => '../../'
 gem 'jquery-rails'
 
 group :assets do
-  gem 'sass-rails', '~> 3.1.0'
-  gem 'coffee-rails', '~> 3.1.0'
+  gem 'sass-rails', '~> 3.1.1'
+  gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier'
   gem 'compass', '0.12.alpha.0'
 end
@@ -106,6 +106,7 @@ gem 'devise'
 " > Gemfile
 
 bundle install --local &> /dev/null 
+bundle update
 # If a local install fails, try a full install.
 if [ "$?" -ne "0" ]
 then

@@ -14,4 +14,5 @@ solr_marc/solrmarc.log
 tmp/*
 *.log
 .bundle
+.rvmrc
 Gemfile.lock

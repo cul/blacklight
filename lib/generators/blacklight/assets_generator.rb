@@ -23,7 +23,7 @@ module Blacklight
  *
  * Required by Blacklight
  *= require 'jquery/ui-lightness/jquery-ui-1.8.1.custom.css'
- *= require 'blacklight/blacklight'         
+ *= require 'blacklight/blacklight_standard'         
 }
         end
 
@@ -31,7 +31,7 @@ module Blacklight
 %q{
 // Required by Blacklight
 //= require jquery-ui
-//= require blacklight/blacklight_standard
+//= require blacklight/blacklight
 }          
         end
         directory("../../../../app/assets/images/blacklight", "app/assets/images/blacklight")
